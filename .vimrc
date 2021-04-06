@@ -154,6 +154,10 @@ set expandtab
 " font
 set guifont=Fura\ Code\ Light\ Nerd\ Font\ Complete:h16
 
+" split imprv
+set splitbelow
+set splitright
+
 "------------------------------------------------------------
 " Mappings {{{1
 "
@@ -188,7 +192,8 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 
 " theme
-Plug 'hzchirs/vim-material'
+Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.7' }
+Plug 'jackiehluo/vim-material'
 
 " status bar
 Plug 'vim-airline/vim-airline'
@@ -201,20 +206,29 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" C++ syntax
+Plug 'bfrg/vim-cpp-modern'
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" sessions
+Plug 'tpope/vim-obsession'
 
 " icons for status bar ans ntree
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Dark theme
+set t_Co=256
 set background=dark
-colorscheme vim-material
+colorscheme jellybeans
+hi Normal ctermbg=none
+hi NonText ctermbg=none
+hi LineNr ctermbg=none
+hi VertSplit ctermbg=none
+"colorscheme material
 
 " Status bar
 let g:airline_powerline_fonts = 1
@@ -229,8 +243,9 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.maxlinenr = 'Ξ'
 let g:airline_symbols.whitespace = 'Ξ'
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
+
+let g:cpp_attributes_highlight = 1
+let g:cpp_member_highlight = 1
 
 " keymaps for plugins
 " autocomplete with tab
@@ -241,6 +256,10 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " fzf
 nmap <C-p> :Files <cr>
 
-" Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
+set <M-G>=g
+imap g <M-G>
+map <M-G> :LspDeclaration <CR>
+
+set <M-R>=R
+imap r <M-R>
+map <M-R> :LspReferences <CR>
