@@ -167,6 +167,12 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
+" split nav
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "------------------------------------------------------------
 
 
@@ -192,6 +198,10 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " icons for status bar ans ntree
 Plug 'ryanoasis/vim-devicons'
@@ -222,6 +232,9 @@ let g:NERDTreeDirArrowCollapsible = ''
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+" fzf
+nmap <C-p> :Files <cr>
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
