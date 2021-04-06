@@ -173,6 +173,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" switch header-cpp
+" first - fix Alt/Meta key for unix-like OS
+set <M-O>=o
+imap o <M-O>
+map <M-O> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 "------------------------------------------------------------
 
 
