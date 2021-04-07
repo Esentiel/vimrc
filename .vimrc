@@ -181,9 +181,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" kill buffer not window
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
-
 " switch header-cpp
 " first - fix Alt/Meta key for unix-like OS
 set <M-O>=o
