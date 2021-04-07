@@ -158,6 +158,10 @@ set guifont=Fura\ Code\ Light\ Nerd\ Font\ Complete:h16
 set splitbelow
 set splitright
 
+" indenting
+set shiftwidth=4
+set tabstop=2
+
 "------------------------------------------------------------
 " Mappings {{{1
 "
@@ -177,6 +181,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" kill buffer not window
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+
 " switch header-cpp
 " first - fix Alt/Meta key for unix-like OS
 set <M-O>=o
@@ -184,6 +191,13 @@ imap o <M-O>
 map <M-O> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 "------------------------------------------------------------
 
+" netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
 
 " Plugins
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
