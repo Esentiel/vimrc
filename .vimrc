@@ -181,11 +181,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" space leader
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 " switch header-cpp
 " first - fix Alt/Meta key for unix-like OS
-set <M-O>=o
-imap o <M-O>
-map <M-O> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+map <Leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 "------------------------------------------------------------
 
 " netrw
@@ -195,6 +197,9 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+
+" quickfix auto close
+:autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
 
 " Plugins
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -270,10 +275,7 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " fzf
 nmap <C-p> :Files <cr>
 
-set <M-G>=g
-imap g <M-G>
-map <M-G> :LspDeclaration <CR>
-
-set <M-R>=R
-imap r <M-R>
-map <M-R> :LspReferences <CR>
+" lsp
+map <Leader>g :LspDeclaration <CR>
+map <Leader>r :LspReferences <CR>
+map <Leader>m :LspDocumentSymbol <CR>
