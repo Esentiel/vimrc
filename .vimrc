@@ -209,7 +209,6 @@ Plug 'tpope/vim-sensible'
 
 " theme
 Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.7' }
-Plug 'jackiehluo/vim-material'
 
 " status bar
 Plug 'vim-airline/vim-airline'
@@ -247,7 +246,6 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 hi LineNr ctermbg=none
 hi VertSplit ctermbg=none
-"colorscheme material
 
 " Status bar
 let g:airline_powerline_fonts = 1
