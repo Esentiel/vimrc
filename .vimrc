@@ -220,6 +220,9 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " C++ syntax
 Plug 'bfrg/vim-cpp-modern'
 
+" auto pairs
+Plug 'jiangmiao/auto-pairs'
+
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
