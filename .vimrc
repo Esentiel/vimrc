@@ -185,6 +185,11 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
+" tabs nav
+nnoremap <Leader>k :tabprevious<CR>
+nnoremap <Leader>j :tabnext<CR>
+
+
 " switch header-cpp
 " first - fix Alt/Meta key for unix-like OS
 map <Leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
@@ -230,6 +235,13 @@ Plug 'jiangmiao/auto-pairs'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+
+" git
+Plug 'tpope/vim-fugitive'
+
+" async run
+Plug 'skywind3000/asyncrun.vim'
 
 " sessions
 Plug 'tpope/vim-obsession'
