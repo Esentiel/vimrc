@@ -283,7 +283,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " fzf
-nmap <C-p> :Files <cr>
+nmap <Leader>p :Files <cr>
 
 " lsp
 map <Leader>g :LspDeclaration <CR>
