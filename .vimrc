@@ -203,6 +203,10 @@ let g:netrw_winsize = 25
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
+" debugger
+packadd termdebug
+:autocmd TerminalWinOpen * wincmd H | wincmd l | wincmd K | resize +15
+
 " quickfix auto close
 :autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
 
