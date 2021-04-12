@@ -242,7 +242,7 @@ Plug 'junegunn/fzf.vim'
 
 
 " git
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 
 " async run
 Plug 'skywind3000/asyncrun.vim'
@@ -262,6 +262,7 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 hi LineNr ctermbg=none
 hi VertSplit ctermbg=none
+hi lspReference ctermfg=black ctermbg=white
 
 " Status bar
 let g:airline_powerline_fonts = 1
