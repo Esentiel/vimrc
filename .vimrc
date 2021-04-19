@@ -152,7 +152,7 @@ set expandtab
 "set tabstop=4
 
 " font
-set guifont=Fura\ Code\ Light\ Nerd\ Font\ Complete:h16
+set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 11
 
 " split imprv
 set splitbelow
