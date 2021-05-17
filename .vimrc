@@ -204,8 +204,8 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
 " debugger
-packadd termdebug
-:autocmd TerminalWinOpen * wincmd H | wincmd l | wincmd K | resize +15
+" packadd termdebug
+" :autocmd TerminalWinOpen * wincmd H | wincmd l | wincmd K | resize +15
 
 " quickfix auto close
 :autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
@@ -213,7 +213,7 @@ packadd termdebug
 " Plugins
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "------------------------------------------------------------
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
 " theme
@@ -223,15 +223,15 @@ Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.7' }
 Plug 'vim-airline/vim-airline'
 
 " lsp
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
 
 " autocomplete
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " C++ syntax
-Plug 'bfrg/vim-cpp-modern'
+" Plug 'bfrg/vim-cpp-modern'
 
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
@@ -283,14 +283,14 @@ let g:cpp_member_highlight = 1
 
 " keymaps for plugins
 " autocomplete with tab
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " fzf
 nmap <Leader>p :Files <cr>
 
 " lsp
-map <Leader>g :LspDeclaration <CR>
-map <Leader>r :LspReferences <CR>
-map <Leader>m :LspDocumentSymbol <CR>
+" map <Leader>g :LspDeclaration <CR>
+" map <Leader>r :LspReferences <CR>
+" map <Leader>m :LspDocumentSymbol <CR>
